@@ -3,8 +3,15 @@
 namespace Treffynnon\Navigator\Distance\Calculator;
 
 use Treffynnon\Navigator as N;
+use Treffynnon\Navigator\CelestialBody as CB;
 
-class Vincenty implements CalculatorInterface {
+class Vincenty extends CalculatorAbstract {
+
+    public function setCelestialBody(CB\CelestialBodyInterface $body) {
+        if(!is_null($body)) {
+            throw new \Exception('Vincenty cannot be used with any other body than earth.');
+        }
+    }
 
     /**
      * Calculate the distance between two
@@ -19,8 +26,9 @@ class Vincenty implements CalculatorInterface {
      * @return float
      */
     public function calculate(N\LatLong $point1, N\LatLong $point2) {
-        $a = \Treffynnon\Navigator::EarthMajorSemiax;
-        $b = \Treffynnon\Navigator::EarthMinorSemiax;
+        $celestialBody = $this->getCelestialBody();
+        $a = $this->getCelestialBody()->majorSemiax;
+        $b = $this->getCelestialBody()->minorSemiax;
         $f = ($a - $b) / $a;  //flattening of the ellipsoid
         $L = $point2->getLongitude()->get() - $point1->getLongitude()->get();  //difference in longitude
         $U1 = atan((1 - $f) * tan($point1->getLatitude()->get()));  //U is 'reduced latitude'

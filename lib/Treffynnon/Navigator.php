@@ -17,21 +17,6 @@ class Navigator {
      * @var string
      */
     const Long = 'Long';
-    /**
-     * Mean radius of the earth in kilometres
-     * @var int
-     */
-    const EarthRadius = 6371;
-    /**
-     * Major semiax in metres
-     * @var int
-     */
-    const EarthMajorSemiax = 6378137;
-    /**
-     * Minor semiax in metres
-     * @var float
-     */
-    const EarthMinorSemiax = 6356752.3141;
 
     /**
      * Setup the autoloader to load the Treffynnon\Navigator library
