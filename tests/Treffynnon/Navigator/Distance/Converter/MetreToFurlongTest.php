@@ -2,31 +2,31 @@
 
 use Treffynnon\Navigator\Distance\Converter as C;
 
-class MetreToKilometreTest extends PHPUnit_Framework_TestCase {
+class MetreToFurlongTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testConvert($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $this->assertRegExp('/[\d.]+/', (string) $Kilometre->convert($distance));
+        $Furlong = new C\MetreToFurlong;
+        $this->assertRegExp('/[\d.]+/', (string) $Furlong->convert($distance));
     }
 
     /**
      * @expectedException PHPUnit_Framework_Error
      */
     public function testFailedConvert() {
-        $Kilometre = new C\MetreToKilometre;
-        $Kilometre->convert();
+        $Furlong = new C\MetreToFurlong;
+        $Furlong->convert();
     }
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testConvertAccuracy($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $actual = $Kilometre->convert($distance);
-        $expected = $distance / $Kilometre->factor;
+        $Furlong = new C\MetreToFurlong;
+        $actual = $Furlong->convert($distance);
+        $expected = $distance * $Furlong->factor;
         $this->assertEquals($expected, $actual, '', 0.2);
     }
 
@@ -34,25 +34,25 @@ class MetreToKilometreTest extends PHPUnit_Framework_TestCase {
      * @dataProvider distanceDataProvider
      */
     public function testReverse($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $this->assertRegExp('/[\d.]+/', (string) $Kilometre->reverse($distance));
+        $Furlong = new C\MetreToFurlong;
+        $this->assertRegExp('/[\d.]+/', (string) $Furlong->reverse($distance));
     }
 
     /**
      * @expectedException PHPUnit_Framework_Error
      */
     public function testFailedReverse() {
-        $Kilometre = new C\MetreToKilometre;
-        $Kilometre->reverse();
+        $Furlong = new C\MetreToFurlong;
+        $Furlong->reverse();
     }
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testReverseAccuracy($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $actual = $Kilometre->reverse($distance);
-        $expected = $distance * $Kilometre->factor;
+        $Furlong = new C\MetreToFurlong;
+        $actual = $Furlong->reverse($distance);
+        $expected = $distance / $Furlong->factor;
         $this->assertEquals($expected, $actual, '', 0.2);
     }
 

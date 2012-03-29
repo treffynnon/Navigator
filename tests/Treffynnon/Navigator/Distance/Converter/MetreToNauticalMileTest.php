@@ -2,31 +2,31 @@
 
 use Treffynnon\Navigator\Distance\Converter as C;
 
-class MetreToKilometreTest extends PHPUnit_Framework_TestCase {
+class MetreToNauticalMileTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testConvert($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $this->assertRegExp('/[\d.]+/', (string) $Kilometre->convert($distance));
+        $NauticalMile = new C\MetreToNauticalMile;
+        $this->assertRegExp('/[\d.]+/', (string) $NauticalMile->convert($distance));
     }
 
     /**
      * @expectedException PHPUnit_Framework_Error
      */
     public function testFailedConvert() {
-        $Kilometre = new C\MetreToKilometre;
-        $Kilometre->convert();
+        $NauticalMile = new C\MetreToNauticalMile;
+        $NauticalMile->convert();
     }
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testConvertAccuracy($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $actual = $Kilometre->convert($distance);
-        $expected = $distance / $Kilometre->factor;
+        $NauticalMile = new C\MetreToNauticalMile;
+        $actual = $NauticalMile->convert($distance);
+        $expected = $distance / $NauticalMile->factor;
         $this->assertEquals($expected, $actual, '', 0.2);
     }
 
@@ -34,25 +34,25 @@ class MetreToKilometreTest extends PHPUnit_Framework_TestCase {
      * @dataProvider distanceDataProvider
      */
     public function testReverse($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $this->assertRegExp('/[\d.]+/', (string) $Kilometre->reverse($distance));
+        $NauticalMile = new C\MetreToNauticalMile;
+        $this->assertRegExp('/[\d.]+/', (string) $NauticalMile->reverse($distance));
     }
 
     /**
      * @expectedException PHPUnit_Framework_Error
      */
     public function testFailedReverse() {
-        $Kilometre = new C\MetreToKilometre;
-        $Kilometre->reverse();
+        $NauticalMile = new C\MetreToNauticalMile;
+        $NauticalMile->reverse();
     }
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testReverseAccuracy($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $actual = $Kilometre->reverse($distance);
-        $expected = $distance * $Kilometre->factor;
+        $NauticalMile = new C\MetreToNauticalMile;
+        $actual = $NauticalMile->reverse($distance);
+        $expected = $distance * $NauticalMile->factor;
         $this->assertEquals($expected, $actual, '', 0.2);
     }
 

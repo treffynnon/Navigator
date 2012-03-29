@@ -4,15 +4,15 @@ namespace Treffynnon\Navigator\Distance\Converter;
 
 class MetreToMile extends ConverterAbstract {
 
-    const Factor = 0.000621371192;
+    public $factor = 0.000621371192;
 
     /**
      * Convert the supplied metres to miles
      * @param float $distance in metres
      * @return float 
      */
-    public static function convert($distance) {
-        return $distance * static::Factor;
+    public function convert($distance) {
+        return $distance * $this->factor;
     }
 
     /**
@@ -20,8 +20,8 @@ class MetreToMile extends ConverterAbstract {
      * @param type $distance in miles
      * @return type 
      */
-    public static function reverse($distance) {
-        return $distance / static::Factor;
+    public function reverse($distance) {
+        return $distance / $this->factor;
     }
 
 }

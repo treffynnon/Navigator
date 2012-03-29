@@ -7,6 +7,10 @@ use Treffynnon\Navigator\CelestialBody as CB;
 
 class Vincenty extends CalculatorAbstract {
 
+    /**
+     * Protect Vincenty from being used with anything but earth
+     * @param CB\Earth $body 
+     */
     public function setCelestialBody(CB\Earth $body) {
         parent::setCelestialBody($body);
     }

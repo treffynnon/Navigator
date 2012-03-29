@@ -2,31 +2,31 @@
 
 use Treffynnon\Navigator\Distance\Converter as C;
 
-class MetreToKilometreTest extends PHPUnit_Framework_TestCase {
+class MetreToMileTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testConvert($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $this->assertRegExp('/[\d.]+/', (string) $Kilometre->convert($distance));
+        $Mile = new C\MetreToMile;
+        $this->assertRegExp('/[\d.]+/', (string) $Mile->convert($distance));
     }
 
     /**
      * @expectedException PHPUnit_Framework_Error
      */
     public function testFailedConvert() {
-        $Kilometre = new C\MetreToKilometre;
-        $Kilometre->convert();
+        $Mile = new C\MetreToMile;
+        $Mile->convert();
     }
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testConvertAccuracy($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $actual = $Kilometre->convert($distance);
-        $expected = $distance / $Kilometre->factor;
+        $Mile = new C\MetreToMile;
+        $actual = $Mile->convert($distance);
+        $expected = $distance * $Mile->factor;
         $this->assertEquals($expected, $actual, '', 0.2);
     }
 
@@ -34,25 +34,25 @@ class MetreToKilometreTest extends PHPUnit_Framework_TestCase {
      * @dataProvider distanceDataProvider
      */
     public function testReverse($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $this->assertRegExp('/[\d.]+/', (string) $Kilometre->reverse($distance));
+        $Mile = new C\MetreToMile;
+        $this->assertRegExp('/[\d.]+/', (string) $Mile->reverse($distance));
     }
 
     /**
      * @expectedException PHPUnit_Framework_Error
      */
     public function testFailedReverse() {
-        $Kilometre = new C\MetreToKilometre;
-        $Kilometre->reverse();
+        $Mile = new C\MetreToMile;
+        $Mile->reverse();
     }
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testReverseAccuracy($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $actual = $Kilometre->reverse($distance);
-        $expected = $distance * $Kilometre->factor;
+        $Mile = new C\MetreToMile;
+        $actual = $Mile->reverse($distance);
+        $expected = $distance / $Mile->factor;
         $this->assertEquals($expected, $actual, '', 0.2);
     }
 

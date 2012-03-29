@@ -2,31 +2,31 @@
 
 use Treffynnon\Navigator\Distance\Converter as C;
 
-class MetreToKilometreTest extends PHPUnit_Framework_TestCase {
+class MetreToLeagueTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testConvert($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $this->assertRegExp('/[\d.]+/', (string) $Kilometre->convert($distance));
+        $League = new C\MetreToLeague;
+        $this->assertRegExp('/[\d.]+/', (string) $League->convert($distance));
     }
 
     /**
      * @expectedException PHPUnit_Framework_Error
      */
     public function testFailedConvert() {
-        $Kilometre = new C\MetreToKilometre;
-        $Kilometre->convert();
+        $League = new C\MetreToLeague;
+        $League->convert();
     }
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testConvertAccuracy($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $actual = $Kilometre->convert($distance);
-        $expected = $distance / $Kilometre->factor;
+        $League = new C\MetreToLeague;
+        $actual = $League->convert($distance);
+        $expected = $distance * $League->factor;
         $this->assertEquals($expected, $actual, '', 0.2);
     }
 
@@ -34,25 +34,25 @@ class MetreToKilometreTest extends PHPUnit_Framework_TestCase {
      * @dataProvider distanceDataProvider
      */
     public function testReverse($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $this->assertRegExp('/[\d.]+/', (string) $Kilometre->reverse($distance));
+        $League = new C\MetreToLeague;
+        $this->assertRegExp('/[\d.]+/', (string) $League->reverse($distance));
     }
 
     /**
      * @expectedException PHPUnit_Framework_Error
      */
     public function testFailedReverse() {
-        $Kilometre = new C\MetreToKilometre;
-        $Kilometre->reverse();
+        $League = new C\MetreToLeague;
+        $League->reverse();
     }
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testReverseAccuracy($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $actual = $Kilometre->reverse($distance);
-        $expected = $distance * $Kilometre->factor;
+        $League = new C\MetreToLeague;
+        $actual = $League->reverse($distance);
+        $expected = $distance / $League->factor;
         $this->assertEquals($expected, $actual, '', 0.2);
     }
 

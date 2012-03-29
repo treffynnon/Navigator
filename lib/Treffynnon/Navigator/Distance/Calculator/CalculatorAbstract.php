@@ -7,6 +7,8 @@ use Treffynnon\Navigator\CelestialBody as CB;
 
 abstract class CalculatorAbstract {
 
+    public $celestialBody = null;
+
     /**
      * Calculate the distance between two coordinates
      * @return float Distance in metres

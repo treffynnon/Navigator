@@ -4,15 +4,15 @@ namespace Treffynnon\Navigator\Distance\Converter;
 
 class MetreToLeague extends ConverterAbstract {
 
-    const Factor = 0.000179985601;
+    public $factor = 0.000179985601;
 
     /**
      * Convert the supplied metres to leagues
      * @param float $distance in metres
      * @return float 
      */
-    public static function convert($distance) {
-        return $distance * static::Factor;
+    public function convert($distance) {
+        return $distance * $this->factor;
     }
 
     /**
@@ -20,8 +20,8 @@ class MetreToLeague extends ConverterAbstract {
      * @param type $distance in leagues
      * @return type 
      */
-    public static function reverse($distance) {
-        return $distance / static::Factor;
+    public function reverse($distance) {
+        return $distance / $this->factor;
     }
 
 }

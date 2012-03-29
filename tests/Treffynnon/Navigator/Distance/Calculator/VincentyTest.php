@@ -2,6 +2,7 @@
 
 use Treffynnon\Navigator as N;
 use Treffynnon\Navigator\Distance\Calculator as C;
+use Treffynnon\Navigator\CelestialBody as CB;
 
 class VincentyTest extends PHPUnit_Framework_TestCase {
 
@@ -18,7 +19,14 @@ class VincentyTest extends PHPUnit_Framework_TestCase {
         $point1 = new N\LatLong(new N\Coordinate(80.9), new N\Coordinate(20.1));
         $point2 = new N\LatLong(new N\Coordinate(20.1), new N\Coordinate(80.9));
         $metres = $Vincenty->calculate($point1, $point2);
-        $this->assertEquals($metres, 7307755.5727136, '', 0.2);
+        $this->assertEquals(7307755.5727136, $metres, '', 0.2);
+    }
+
+    /**
+     * @expectedException PHPUnit_Framework_Error 
+     */
+    public function testFailedCelestialBody() {
+        $Vincenty = new C\Vincenty(new CB\EarthMoon);
     }
 
 }

@@ -2,31 +2,31 @@
 
 use Treffynnon\Navigator\Distance\Converter as C;
 
-class MetreToKilometreTest extends PHPUnit_Framework_TestCase {
+class MetreToParsecTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testConvert($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $this->assertRegExp('/[\d.]+/', (string) $Kilometre->convert($distance));
+        $Parsec = new C\MetreToParsec;
+        $this->assertRegExp('/[\d.]+/', (string) $Parsec->convert($distance));
     }
 
     /**
      * @expectedException PHPUnit_Framework_Error
      */
     public function testFailedConvert() {
-        $Kilometre = new C\MetreToKilometre;
-        $Kilometre->convert();
+        $Parsec = new C\MetreToParsec;
+        $Parsec->convert();
     }
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testConvertAccuracy($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $actual = $Kilometre->convert($distance);
-        $expected = $distance / $Kilometre->factor;
+        $Parsec = new C\MetreToParsec;
+        $actual = $Parsec->convert($distance);
+        $expected = $distance * $Parsec->factor;
         $this->assertEquals($expected, $actual, '', 0.2);
     }
 
@@ -34,25 +34,25 @@ class MetreToKilometreTest extends PHPUnit_Framework_TestCase {
      * @dataProvider distanceDataProvider
      */
     public function testReverse($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $this->assertRegExp('/[\d.]+/', (string) $Kilometre->reverse($distance));
+        $Parsec = new C\MetreToParsec;
+        $this->assertRegExp('/[\d.]+/', (string) $Parsec->reverse($distance));
     }
 
     /**
      * @expectedException PHPUnit_Framework_Error
      */
     public function testFailedReverse() {
-        $Kilometre = new C\MetreToKilometre;
-        $Kilometre->reverse();
+        $Parsec = new C\MetreToParsec;
+        $Parsec->reverse();
     }
 
     /**
      * @dataProvider distanceDataProvider
      */
     public function testReverseAccuracy($distance) {
-        $Kilometre = new C\MetreToKilometre;
-        $actual = $Kilometre->reverse($distance);
-        $expected = $distance * $Kilometre->factor;
+        $Parsec = new C\MetreToParsec;
+        $actual = $Parsec->reverse($distance);
+        $expected = $distance / $Parsec->factor;
         $this->assertEquals($expected, $actual, '', 0.2);
     }
 
