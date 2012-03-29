@@ -9,11 +9,11 @@ class Haversine extends CalculatorAbstract {
 
     /**
      * Calculate the distance between two
-     * points using Vincenty's formula.
+     * points using the Haversine formula.
      *
      * Supply instances of the coordinate class.
-     *
-     * http://www.movable-type.co.uk/scripts/LatLongVincenty.html
+     * 
+     * http://en.wikipedia.org/wiki/Haversine_formula
      *
      * @param Treffynnon\Navigator\Coordinate $point1
      * @param Treffynnon\Navigator\Coordinate $point2
