@@ -6,7 +6,7 @@ use Treffynnon as T;
 
 $Navigator = new T\Navigator;
 
-$LatLng = new T\Navigator\LatLong(
+/*$LatLng = new T\Navigator\LatLong(
     new T\Navigator\Coordinate(60.9),
     new T\Navigator\Coordinate(10.2)
 );
@@ -22,7 +22,7 @@ $Calculator = new T\Navigator\Distance\Calculator\Vincenty($TheMoon);
 var_dump($Distance->get($Calculator));
 
 die();
-
+*/
 
 class NavigatorTestData {
 
