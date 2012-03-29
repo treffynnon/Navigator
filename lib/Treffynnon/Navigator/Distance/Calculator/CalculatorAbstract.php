@@ -15,14 +15,14 @@ abstract class CalculatorAbstract {
      */
     abstract public function calculate(N\LatLong $point1, N\LatLong $point2);
 
-    public function __construct(CB\CelestialBodyInterface $body = null) {
+    public function __construct(CB\CelestialBodyAbstract $body = null) {
         if(is_null($body)) {
             $body = new CB\Earth;
         }
         $this->setCelestialBody($body);
     }
     
-    public function setCelestialBody(CB\CelestialBodyInterface $body) {
+    public function setCelestialBody(CB\CelestialBodyAbstract $body) {
         $this->celestialBody = $body;
     }
 

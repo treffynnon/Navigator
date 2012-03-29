@@ -2,17 +2,17 @@
 
 namespace Treffynnon\Navigator\CelestialBody;
 
-interface CelestialBodyInterface {
+abstract class CelestialBodyAbstract {
     /**
      * @var float in metres 
      */
-    const MinorSemiax = null;
+    public $minorSemiax;
     /**
      * @var float in metres
      */
-    const MajorSemiax = null;
+    public $majorSemiax;
     /**
      * @var float in kilometres 
      */
-    const Radius = null;
+    public $radius;
 }

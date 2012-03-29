@@ -29,8 +29,8 @@ class Vincenty extends CalculatorAbstract {
      */
     public function calculate(N\LatLong $point1, N\LatLong $point2) {
         $celestialBody = $this->getCelestialBody();
-        $a = $this->getCelestialBody()->majorSemiax;
-        $b = $this->getCelestialBody()->minorSemiax;
+        $a = $celestialBody->majorSemiax;
+        $b = $celestialBody->minorSemiax;
         $f = ($a - $b) / $a;  //flattening of the ellipsoid
         $L = $point2->getLongitude()->get() - $point1->getLongitude()->get();  //difference in longitude
         $U1 = atan((1 - $f) * tan($point1->getLatitude()->get()));  //U is 'reduced latitude'

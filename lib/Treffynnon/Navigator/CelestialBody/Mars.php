@@ -2,18 +2,21 @@
 
 namespace Treffynnon\Navigator\CelestialBody;
 
-class EarthMoon extends CelestialBodyAbstract {
+class Mars extends CelestialBodyAbstract {
+
     /**
      * @var float in metres
      */
-    public $majorSemiax = 384400000;
+    public $majorSemiax = 227936637000;
+
     /**
      * @var float in metres
      */
-    public $minorSemiax = 383800000;
+    public $minorSemiax = 226939986000;
+
     /**
      * @var float in kilometres
      */
-    public $radius = 1738.14;
+    public $radius = 3389.5;
 
 }

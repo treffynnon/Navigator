@@ -2,7 +2,7 @@
 
 namespace Treffynnon\Navigator\CelestialBody;
 
-class Earth implements CelestialBodyInterface {
+class Earth extends CelestialBodyAbstract {
 
     /**
      * @var float in metres
