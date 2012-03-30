@@ -8,14 +8,6 @@ use Treffynnon\Navigator\CelestialBody as CB;
 class Vincenty extends CalculatorAbstract {
 
     /**
-     * Protect Vincenty from being used with anything but earth
-     * @param CB\Earth $body 
-     */
-    public function setCelestialBody(CB\Earth $body) {
-        parent::setCelestialBody($body);
-    }
-
-    /**
      * Calculate the distance between two
      * points using Vincenty's formula.
      *
@@ -29,9 +21,9 @@ class Vincenty extends CalculatorAbstract {
      */
     public function calculate(N\LatLong $point1, N\LatLong $point2) {
         $celestialBody = $this->getCelestialBody();
-        $a = $celestialBody->majorSemiax;
-        $b = $celestialBody->minorSemiax;
-        $f = ($a - $b) / $a;  //flattening of the ellipsoid
+        $a = $celestialBody->equatorialRadius;
+        $b = $celestialBody->polarRadius;
+        $f = $celestialBody->flattening;  //flattening of the ellipsoid
         $L = $point2->getLongitude()->get() - $point1->getLongitude()->get();  //difference in longitude
         $U1 = atan((1 - $f) * tan($point1->getLatitude()->get()));  //U is 'reduced latitude'
         $U2 = atan((1 - $f) * tan($point2->getLatitude()->get()));

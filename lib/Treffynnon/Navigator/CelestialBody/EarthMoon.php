@@ -3,17 +3,25 @@
 namespace Treffynnon\Navigator\CelestialBody;
 
 class EarthMoon extends CelestialBodyAbstract {
+
     /**
      * @var float in metres
      */
-    public $majorSemiax = 384400000;
+    public $equatorialRadius = 1738100;
+
     /**
      * @var float in metres
      */
-    public $minorSemiax = 383800000;
+    public $polarRadius = 1736000;
+
+    /**
+     * @var float in metres 
+     */
+    public $flattening = 0.00121;
+
     /**
      * @var float in kilometres
      */
-    public $radius = 1738.14;
+    public $volumetricMeanRadius = 1737.1;
 
 }

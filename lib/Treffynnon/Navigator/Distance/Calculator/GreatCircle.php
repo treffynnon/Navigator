@@ -27,7 +27,7 @@ class GreatCircle extends CalculatorAbstract {
                         cos($point2->getLatitude()->get()) * 
                         cos($point2->getLongitude()->get() - 
                             $point1->getLongitude()->get()));
-        $d = $degrees * $celestialBody->radius;
+        $d = $degrees * $celestialBody->volumetricMeanRadius;
         return $d * 1000;
     }
 

@@ -25,7 +25,7 @@ class Haversine extends CalculatorAbstract {
         $deltaLong = $point2->getLongitude()->get() - $point1->getLongitude()->get();
         $a = sin($deltaLat / 2) * sin($deltaLat / 2) + cos($point1->getLatitude()->get()) * cos($point2->getLatitude()->get()) * sin($deltaLong / 2) * sin($deltaLong / 2);
         $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
-        $d = $celestialBody->radius * $c * 1000;
+        $d = $celestialBody->volumetricMeanRadius * $c * 1000;
         return $d;
     }
 

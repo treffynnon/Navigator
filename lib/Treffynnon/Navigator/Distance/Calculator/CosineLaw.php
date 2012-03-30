@@ -24,7 +24,7 @@ class CosineLaw extends CalculatorAbstract {
         $d = acos(sin($point1->getLatitude()->get()) * sin($point2->getLatitude()->get()) + 
                   cos($point1->getLatitude()->get()) * cos($point2->getLatitude()->get()) * 
                   cos($point2->getLongitude()->get() - $point1->getLongitude()->get())) * 
-             $celestialBody->radius;
+             $celestialBody->volumetricMeanRadius;
         return $d * 1000;
     }
 

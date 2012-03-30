@@ -22,11 +22,4 @@ class VincentyTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(7307755.5727136, $metres, '', 0.2);
     }
 
-    /**
-     * @expectedException PHPUnit_Framework_Error 
-     */
-    public function testFailedCelestialBody() {
-        $Vincenty = new C\Vincenty(new CB\EarthMoon);
-    }
-
 }

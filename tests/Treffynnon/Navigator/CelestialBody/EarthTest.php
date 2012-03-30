@@ -11,20 +11,20 @@ class EarthTest extends PHPUnit_Framework_TestCase {
 
     public function testRadius() {
         $CelestialBody = new CB\Earth;
-        $this->assertClassHasAttribute('radius', get_class($CelestialBody));
-        $this->assertNotNull($CelestialBody->radius);
+        $this->assertClassHasAttribute('volumetricMeanRadius', get_class($CelestialBody));
+        $this->assertNotNull($CelestialBody->volumetricMeanRadius);
     }
 
     public function testMinorSemiax() {
         $CelestialBody = new CB\Earth;
-        $this->assertClassHasAttribute('minorSemiax', get_class($CelestialBody));
-        $this->assertNotNull($CelestialBody->minorSemiax);
+        $this->assertClassHasAttribute('polarRadius', get_class($CelestialBody));
+        $this->assertNotNull($CelestialBody->polarRadius);
     }
 
     public function testMajorSemiax() {
         $CelestialBody = new CB\Earth;
-        $this->assertClassHasAttribute('majorSemiax', get_class($CelestialBody));
-        $this->assertNotNull($CelestialBody->majorSemiax);
+        $this->assertClassHasAttribute('equatorialRadius', get_class($CelestialBody));
+        $this->assertNotNull($CelestialBody->equatorialRadius);
     }
 
 }
