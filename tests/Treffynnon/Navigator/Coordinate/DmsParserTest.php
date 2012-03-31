@@ -5,6 +5,11 @@ use Treffynnon\Navigator\Coordinate as C;
 
 class DmsParserTest extends PHPUnit_Framework_TestCase {
 
+    public function testCorrectAbstractImplemented() {
+        $DmsParser = new C\DmsParser;
+        $this->assertInstanceOf('Treffynnon\Navigator\Coordinate\ParserAbstract', $DmsParser);
+    }
+
     public function testClassPropertiesExist() {
         $DmsParser = new C\DmsParser;
         $this->assertObjectHasAttribute('input_format', $DmsParser);

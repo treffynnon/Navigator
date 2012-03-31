@@ -5,7 +5,7 @@ namespace Treffynnon\Navigator\Coordinate;
 /**
  * @todo Convert this to be a trait when PHP 5.4 support improves
  */
-class BaseCoordinateParser implements ParserInterface {
+abstract class ParserAbstract {
 
     /**
      * The direction stored as either Treffynnon\Navigator::Long or Treffynnon\Navigator::Lat
@@ -44,20 +44,8 @@ class BaseCoordinateParser implements ParserInterface {
         }
     }
 
-    /**
-     * Override this method
-     * @param float $coord
-     */
-    public function get($coord) {
-        // override this!
-    }
+    abstract public function get($coord);
 
-    /**
-     * Override this method
-     * @param float $coord
-     */
-    public function set($coord) {
-        // override this!
-    }
+    abstract public function set($coord);
 
 }

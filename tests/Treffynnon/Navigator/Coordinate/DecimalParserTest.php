@@ -2,9 +2,9 @@
 Use Treffynnon\Navigator\Coordinate as C;
 class DecimalParserTest extends PHPUnit_Framework_TestCase {
 
-    public function testCorrectInterfaceImplemented() {
+    public function testCorrectAbstractImplemented() {
         $DecimalParser = new C\DecimalParser;
-        $this->assertInstanceOf('Treffynnon\Navigator\Coordinate\ParserInterface', $DecimalParser);
+        $this->assertInstanceOf('Treffynnon\Navigator\Coordinate\ParserAbstract', $DecimalParser);
     }
 
     /**

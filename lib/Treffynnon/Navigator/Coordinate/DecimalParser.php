@@ -3,7 +3,7 @@ namespace Treffynnon\Navigator\Coordinate;
 /**
  * Parse decimal coordinate values to radians
  */
-class DecimalParser extends BaseCoordinateParser {
+class DecimalParser extends ParserAbstract {
     /**
      * Convert a decimal coordinate to radians
      * @param float $coord

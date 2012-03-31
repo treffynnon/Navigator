@@ -27,7 +27,7 @@ class Coordinate {
      * @param string|float $coord
      * @param ParserInterface $parser
      */
-    public function __construct($coord = null, C\ParserInterface $parser = null) {
+    public function __construct($coord = null, C\ParserAbstract $parser = null) {
         if (is_null($parser)) {
             $parser = new C\DecimalParser();
         }
@@ -68,7 +68,7 @@ class Coordinate {
      * Set the parser that should be used to manage this coordinate
      * @param ParserInterface $parser
      */
-    public function setParser(C\ParserInterface $parser) {
+    public function setParser(C\ParserAbstract $parser) {
         $this->parser = $parser;
     }
 

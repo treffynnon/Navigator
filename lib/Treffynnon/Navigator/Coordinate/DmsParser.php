@@ -5,7 +5,7 @@ namespace Treffynnon\Navigator\Coordinate;
 /**
  * Parse a Degrees, Minutes and Seconds notation coordinate to radians
  */
-class DmsParser extends BaseCoordinateParser {
+class DmsParser extends ParserAbstract {
 
     /**
      * A regular expression to run on the DMS string to extract its component

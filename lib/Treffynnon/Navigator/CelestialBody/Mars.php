@@ -7,12 +7,12 @@ class Mars extends CelestialBodyAbstract {
     /**
      * @var float in metres
      */
-    public $equatorialRadius = 227936637000;
+    public $equatorialRadius = 3396200;
 
     /**
      * @var float in metres
      */
-    public $polarRadius = 226939986000;
+    public $polarRadius = 3376200;
 
     /**
      * @var float in metres 
