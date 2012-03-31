@@ -22,4 +22,11 @@ class VincentyTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(7307755.5727136, $metres, '', 0.2);
     }
 
+    public function testMarsCalculate() {
+        $Vincenty = new C\Vincenty(new CB\Mars);
+        $point1 = new N\LatLong(new N\Coordinate(80.9), new N\Coordinate(20.1));
+        $point2 = new N\LatLong(new N\Coordinate(20.1), new N\Coordinate(80.9));
+        $metres = $Vincenty->calculate($point1, $point2);
+        $this->assertEquals(7307755.5727136, $metres, '', 0.2);
+    }
 }
