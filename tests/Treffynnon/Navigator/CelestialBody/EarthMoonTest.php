@@ -1,40 +1,71 @@
 <?php
 
+require_once 'CelestialBodyTestAbstract.php';
+
 use Treffynnon\Navigator as N;
 use Treffynnon\Navigator\Distance\Calculator as C;
 use Treffynnon\Navigator\CelestialBody as CB;
 
-class EarthMoonTest extends PHPUnit_Framework_TestCase {
+class EarthMoonTest extends CelestialBodyTestAbstract {
 
-    public function testExtendsInterface() {
-        $CelestialBody = new CB\EarthMoon;
-        $this->assertInstanceOf('Treffynnon\Navigator\CelestialBody\CelestialBodyAbstract', $CelestialBody);
+    public function getObject() {
+        return new CB\EarthMoon;
     }
 
-    public function testVolumetricMeanRadius() {
-        $CelestialBody = new CB\EarthMoon;
-        $this->assertClassHasAttribute('volumetricMeanRadius', get_class($CelestialBody));
-        $this->assertNotNull($CelestialBody->volumetricMeanRadius);
+    public function vincentyDataProvider() {
+        $data = $this->getCoordinates();
+        $results = array(
+            array(1992124.7768471),
+            array(2698289.7434361),
+            array(2728552.0087039),
+            array(2648535.3270465),
+            array(4546220.8311114),
+            array(0),
+            array(927892.62513723),
+        );
+        return $this->mergeCoordArrays($data, $results);
     }
 
-    public function testPolarRadius() {
-        $CelestialBody = new CB\EarthMoon;
-        $this->assertClassHasAttribute('polarRadius', get_class($CelestialBody));
-        $this->assertNotNull($CelestialBody->polarRadius);
+    public function cosineLawDataProvider() {
+        $data = $this->getCoordinates();
+        $results = array(
+            array(1991367.3910537),
+            array(2698312.184839),
+            array(2728630.2992754),
+            array(2648340.8276128),
+            array(4547717.165459),
+            array(0),
+            array(927976.85758293),
+        );
+        return $this->mergeCoordArrays($data, $results);
     }
 
-    public function testEquatorialRadius() {
-        $CelestialBody = new CB\EarthMoon;
-        $this->assertClassHasAttribute('equatorialRadius', get_class($CelestialBody));
-        $this->assertNotNull($CelestialBody->equatorialRadius);
+    public function haversineDataProvider() {
+        $data = $this->getCoordinates();
+        $results = array(
+            array(1991367.3910537),
+            array(2698312.184839),
+            array(2728630.2992754),
+            array(2648340.8276128),
+            array(4547717.165459),
+            array(0),
+            array(927976.85758293),
+        );
+        return $this->mergeCoordArrays($data, $results);
     }
 
-    public function testVincentyCalculate() {
-        $Vincenty = new C\Vincenty(new CB\EarthMoon);
-        $point1 = new N\LatLong(new N\Coordinate(80.9), new N\Coordinate(20.1));
-        $point2 = new N\LatLong(new N\Coordinate(20.1), new N\Coordinate(80.9));
-        $metres = $Vincenty->calculate($point1, $point2);
-        $this->assertEquals(1992124.7768471, $metres, '', 0.2);
+    public function greatCircleDataProvider() {
+        $data = $this->getCoordinates();
+        $results = array(
+            array(1991367.3910537),
+            array(2698312.184839),
+            array(2728630.2992754),
+            array(2648340.8276128),
+            array(4547717.165459),
+            array(0),
+            array(927976.85758293),
+        );
+        return $this->mergeCoordArrays($data, $results);
     }
 
 }
