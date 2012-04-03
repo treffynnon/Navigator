@@ -60,6 +60,17 @@ class CoordinateTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('Treffynnon\Navigator\Coordinate\DecimalParser', $Coordinate->getParser());
     }
 
+    /**
+     * @dataProvider coordInvalidProvider
+     */
+    public function testInvalidSetCoordinate($coord) {
+        $Coordinate = new N\Coordinate;
+        $Coordinate->set($coord);
+        $coord_out = (string) $Coordinate;
+        $this->assertInternalType('string', $coord_out);
+        $this->assertEquals($coord, $coord_out, '', 0.2);
+    }
+
     public function coordValidProvider() {
         return NavigatorTestData::coordData_decimal_valid();
     }

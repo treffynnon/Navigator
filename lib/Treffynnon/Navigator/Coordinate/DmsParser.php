@@ -25,7 +25,7 @@ class DmsParser extends ParserAbstract {
      * @param string $coord
      * @return float
      */
-    public function set($coord) {
+    public function parse($coord) {
         $coordinate = null;
         $matches = array();
         preg_match($this->input_format, $coord, $matches);

@@ -9,7 +9,7 @@ class DecimalParser extends ParserAbstract {
      * @param float $coord
      * @return float
      */
-    public function set($coord) {
+    public function parse($coord) {
         return deg2rad((float) $coord);
     }
     /**
