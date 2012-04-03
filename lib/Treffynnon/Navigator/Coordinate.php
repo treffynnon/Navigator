@@ -29,13 +29,26 @@ class Coordinate {
      */
     public function __construct($coord = null, C\ParserAbstract $parser = null) {
         if (is_null($parser)) {
-            $parser = new C\DecimalParser();
+            $parser = $this->guessParser($coord);
         }
+
         $this->setParser($parser);
 
         if (!is_null($coord)) {
             $this->set($coord);
         }
+    }
+
+    /**
+     * Guess the correct parser for a given coordinate
+     * @param float|string $coord
+     * @return \Treffynnon\Navigator\Coordinate\DecimalParser|\Treffynnon\Navigator\Coordinate\DmsParser 
+     */
+    public function guessParser($coord) {
+        if(!is_numeric($coord) and !is_null($coord)) {
+            return new C\DmsParser;
+        }
+        return new C\DecimalParser;
     }
 
     /**
