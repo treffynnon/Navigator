@@ -29,13 +29,13 @@ class EarthTest extends CelestialBodyTestAbstract {
     public function cosineLawDataProvider() {
         $data = $this->getCoordinates();
         $results = array(
-            array(1991367.3910537),
-            array(2698312.184839),
-            array(2728630.2992754),
-            array(2648340.8276128),
-            array(4547717.165459),
+            array(7303552.8457791),
+            array(9896348.4713657),
+            array(10007543.39801),
+            array(9713073.1752468),
+            array(16679238.996684),
             array(0),
-            array(927976.85758293),
+            array(3403454.3547642),
         );
         return $this->mergeCoordArrays($data, $results);
     }
@@ -43,13 +43,13 @@ class EarthTest extends CelestialBodyTestAbstract {
     public function haversineDataProvider() {
         $data = $this->getCoordinates();
         $results = array(
-            array(1991367.3910537),
-            array(2698312.184839),
-            array(2728630.2992754),
-            array(2648340.8276128),
-            array(4547717.165459),
+            array(7303552.8457791),
+            array(9896348.4713657),
+            array(10007543.39801),
+            array(9713073.1752468),
+            array(16679238.996684),
             array(0),
-            array(927976.85758293),
+            array(3403454.3547642),
         );
         return $this->mergeCoordArrays($data, $results);
     }
@@ -57,13 +57,13 @@ class EarthTest extends CelestialBodyTestAbstract {
     public function greatCircleDataProvider() {
         $data = $this->getCoordinates();
         $results = array(
-            array(1991367.3910537),
-            array(2698312.184839),
-            array(2728630.2992754),
-            array(2648340.8276128),
-            array(4547717.165459),
+            array(7303552.8457791),
+            array(9896348.4713657),
+            array(10007543.39801),
+            array(9713073.1752468),
+            array(16679238.996684),
             array(0),
-            array(927976.85758293),
+            array(3403454.3547642),
         );
         return $this->mergeCoordArrays($data, $results);
     }

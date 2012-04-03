@@ -15,13 +15,13 @@ class MarsTest extends CelestialBodyTestAbstract {
     public function vincentyDataProvider() {
         $data = $this->getCoordinates();
         $results = array(
-            array(1992124.7768471),
-            array(2698289.7434361),
-            array(2728552.0087039),
-            array(2648535.3270465),
-            array(4546220.8311114),
+            array(3889587.0946715),
+            array(5260463.2808461),
+            array(5319042.1188342),
+            array(5165145.786745),
+            array(8852054.2764475),
             array(0),
-            array(927892.62513723),
+            array(1808419.9672755),
         );
         return $this->mergeCoordArrays($data, $results);
     }
@@ -29,13 +29,13 @@ class MarsTest extends CelestialBodyTestAbstract {
     public function cosineLawDataProvider() {
         $data = $this->getCoordinates();
         $results = array(
-            array(1991367.3910537),
-            array(2698312.184839),
-            array(2728630.2992754),
-            array(2648340.8276128),
-            array(4547717.165459),
+            array(3885636.8499087),
+            array(5265056.214675),
+            array(5324214.1496713),
+            array(5167550.0749489),
+            array(8873690.2494522),
             array(0),
-            array(927976.85758293),
+            array(1810706.0956637),
         );
         return $this->mergeCoordArrays($data, $results);
     }
@@ -43,13 +43,13 @@ class MarsTest extends CelestialBodyTestAbstract {
     public function haversineDataProvider() {
         $data = $this->getCoordinates();
         $results = array(
-            array(1991367.3910537),
-            array(2698312.184839),
-            array(2728630.2992754),
-            array(2648340.8276128),
-            array(4547717.165459),
+            array(3885636.8499087),
+            array(5265056.214675),
+            array(5324214.1496713),
+            array(5167550.0749489),
+            array(8873690.2494522),
             array(0),
-            array(927976.85758293),
+            array(1810706.0956637),
         );
         return $this->mergeCoordArrays($data, $results);
     }
@@ -57,13 +57,13 @@ class MarsTest extends CelestialBodyTestAbstract {
     public function greatCircleDataProvider() {
         $data = $this->getCoordinates();
         $results = array(
-            array(1991367.3910537),
-            array(2698312.184839),
-            array(2728630.2992754),
-            array(2648340.8276128),
-            array(4547717.165459),
+            array(3885636.8499087),
+            array(5265056.214675),
+            array(5324214.1496713),
+            array(5167550.0749489),
+            array(8873690.2494522),
             array(0),
-            array(927976.85758293),
+            array(1810706.0956637),
         );
         return $this->mergeCoordArrays($data, $results);
     }
