@@ -26,7 +26,17 @@ class NavigatorTestData {
             array(-200),
             array(-181),
             array(185),
+            array(181),
         );
+    }
+
+    public static function coordData_decimal_long_invalid() {
+        return self::coordData_decimal_invalid();
+    }
+
+    public static function coordData_decimal_lat_invalid() {
+        $invalid = array(array(91), array(-91));
+        return $invalid + self::coordData_decimal_invalid();
     }
 
     public static function coordData_dms_valid() {

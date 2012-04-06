@@ -61,10 +61,27 @@ class CoordinateTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @dataProvider coordInvalidProvider
+     * @dataProvider coordInvalidLatProvider
+     * @expectedException Treffynnon\Navigator\Coordinate\InvalidCoordinateValueException
      */
-    public function testInvalidSetCoordinate($coord) {
+    public function testInvalidSetLatCoordinate($coord) {
         $Coordinate = new N\Coordinate;
+        // must set a parser and direction
+        $Coordinate->setParser(new C\DecimalParser(N::Lat));
+        $Coordinate->set($coord);
+        $coord_out = (string) $Coordinate;
+        $this->assertInternalType('string', $coord_out);
+        $this->assertEquals($coord, $coord_out, '', 0.2);
+    }
+
+    /**
+     * @dataProvider coordInvalidLongProvider
+     * @expectedException Treffynnon\Navigator\Coordinate\InvalidCoordinateValueException
+     */
+    public function testInvalidSetLongCoordinate($coord) {
+        $Coordinate = new N\Coordinate;
+        // must set a parser and direction
+        $Coordinate->setParser(new C\DecimalParser(N::Long));
         $Coordinate->set($coord);
         $coord_out = (string) $Coordinate;
         $this->assertInternalType('string', $coord_out);
@@ -73,6 +90,14 @@ class CoordinateTest extends PHPUnit_Framework_TestCase {
 
     public function coordValidProvider() {
         return NavigatorTestData::coordData_decimal_valid();
+    }
+
+    public function coordInvalidLatProvider() {
+        return NavigatorTestData::coordData_decimal_lat_invalid();
+    }
+
+    public function coordInvalidLongProvider() {
+        return NavigatorTestData::coordData_decimal_long_invalid();
     }
 
 }
