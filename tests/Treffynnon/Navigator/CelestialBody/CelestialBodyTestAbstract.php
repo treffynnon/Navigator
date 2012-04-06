@@ -80,15 +80,7 @@ abstract class CelestialBodyTestAbstract extends PHPUnit_Framework_TestCase {
     }
 
     public function getCoordinates() {
-        return array(
-            array(80.9, 20.1, 20.1, 80.9),
-            array(1, 2, 90, 60),
-            array(90, 180, -180, -90),
-            array(23, 12, -20, 90),
-            array(-90, -13, 60, -34),
-            array(1, 1, 1, 1),
-            array(-2, -5, -19, 21),
-        );
+        return NavigatorTestData::pointsData_valid();
     }
 
     public function mergeCoordArrays($data, $results) {
