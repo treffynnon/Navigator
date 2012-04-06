@@ -2,6 +2,9 @@
 
 namespace Treffynnon\Navigator\Coordinate;
 
+use Treffynnon\Navigator as N;
+use Treffynnon\Navigator\Exception as E;
+
 /**
  * @todo Convert this to be a trait when PHP 5.4 support improves
  */
@@ -36,11 +39,11 @@ abstract class ParserAbstract {
      * @param string $direction
      */
     public function setDirection($direction) {
-        if ($direction === \Treffynnon\Navigator::Lat
-            or $direction === \Treffynnon\Navigator::Long) {
+        if ($direction === N::Lat
+            or $direction === N::Long) {
             $this->direction = $direction;
         } else {
-            throw new \Treffynnon\InvalidDirectionException('You can only supply Treffynnon\Navigator::Long or Treffynnon\Navigator::Lat');
+            throw new E\InvalidDirectionException('You can only supply Treffynnon\Navigator::Long or Treffynnon\Navigator::Lat');
         }
     }
 
@@ -53,12 +56,12 @@ abstract class ParserAbstract {
      */
     public function set($coord) {
         $radians = $this->parse($coord);
-        if ($this->getDirection() == \Treffynnon\Navigator::Lat
+        if ($this->getDirection() == N::Lat
             and ($radians < -1.5707963267949 or $radians > 1.5707963267949)) {
-            throw new InvalidCoordinateValueException('Latitude may not be greater than 90 or lower than -90');
-        } elseif ($this->getDirection() == \Treffynnon\Navigator::Long
+            throw new E\InvalidCoordinateValueException('Latitude may not be greater than 90 or lower than -90');
+        } elseif ($this->getDirection() == N::Long
             and ($radians < -3.1415926535898 or $radians > 3.1415926535898)) {
-            throw new InvalidCoordinateValueException('Longitude may not be greater than 180 or lower than -180');
+            throw new E\InvalidCoordinateValueException('Longitude may not be greater than 180 or lower than -180');
         }
         return $radians;
     }
@@ -66,8 +69,4 @@ abstract class ParserAbstract {
     abstract public function parse($coord);
 
     abstract public function get($coord);
-}
-
-class InvalidCoordinateValueException extends \Exception {
-    
 }

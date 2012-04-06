@@ -3,6 +3,7 @@
 namespace Treffynnon\Navigator;
 
 use Treffynnon as T;
+use Treffynnon\Navigator as N;
 
 /**
  * A representation of a latitude and longitude coordinate 
@@ -37,8 +38,8 @@ class LatLong {
      * necessary 
      */
     protected function primeCoordinateParsers() {
-        $this->latitude->getParser()->setDirection(T\Navigator::Lat);
-        $this->longitude->getParser()->setDirection(T\Navigator::Long);
+        $this->latitude->getParser()->setDirection(N::Lat);
+        $this->longitude->getParser()->setDirection(N::Long);
     }
 
     /**

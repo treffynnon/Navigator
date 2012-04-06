@@ -62,7 +62,7 @@ class CoordinateTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider coordInvalidLatProvider
-     * @expectedException Treffynnon\Navigator\Coordinate\InvalidCoordinateValueException
+     * @expectedException Treffynnon\Navigator\Exception\InvalidCoordinateValueException
      */
     public function testInvalidSetLatCoordinate($coord) {
         $Coordinate = new N\Coordinate;
@@ -76,7 +76,7 @@ class CoordinateTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider coordInvalidLongProvider
-     * @expectedException Treffynnon\Navigator\Coordinate\InvalidCoordinateValueException
+     * @expectedException Treffynnon\Navigator\Exception\InvalidCoordinateValueException
      */
     public function testInvalidSetLongCoordinate($coord) {
         $Coordinate = new N\Coordinate;

@@ -2,6 +2,9 @@
 
 namespace Treffynnon\Navigator\Coordinate;
 
+use Treffynnon\Navigator as N;
+use Treffynnon\Navigator\Exception as E;
+
 /**
  * Parse a Degrees, Minutes and Seconds notation coordinate to radians
  */
@@ -46,7 +49,7 @@ class DmsParser extends ParserAbstract {
         if (is_numeric($coordinate)) {
             return deg2rad((float) $coordinate);
         }
-        throw new \Treffynnon\InvalidCoordinateFormatException('The format of "' . $coord . '" cannot be parsed');
+        throw new E\InvalidCoordinateFormatException('The format of "' . $coord . '" cannot be parsed');
     }
 
     /**
@@ -58,12 +61,12 @@ class DmsParser extends ParserAbstract {
         $coord = rad2deg($coord);
         $degrees = (integer) $coord;
         $compass = '';
-        if ($this->direction == \Treffynnon\Navigator::Lat) {
+        if ($this->direction == N::Lat) {
             if ($degrees < 0)
                 $compass = 'S';
             elseif ($degrees > 0)
                 $compass = 'N';
-        }elseif ($this->direction == \Treffynnon\Navigator::Long) {
+        }elseif ($this->direction == N::Long) {
             if ($degrees < 0)
                 $compass = 'W';
             elseif ($degrees > 0)

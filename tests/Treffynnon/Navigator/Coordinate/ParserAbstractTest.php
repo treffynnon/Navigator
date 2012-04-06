@@ -15,7 +15,7 @@ class ParserAbstractTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider directionInvalidProvider
-     * @expectedException Treffynnon\InvalidDirectionException
+     * @expectedException Treffynnon\Navigator\Exception\InvalidDirectionException
      */
     public function testSetInvalidDirection($direction) {
         $stub = $this->getMockForAbstractClass('Treffynnon\Navigator\Coordinate\ParserAbstract');

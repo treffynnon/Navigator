@@ -35,11 +35,3 @@ class Navigator {
     }
 
 }
-
-class InvalidCoordinateFormatException extends \Exception {
-    
-}
-
-class InvalidDirectionException extends \Exception {
-    
-}

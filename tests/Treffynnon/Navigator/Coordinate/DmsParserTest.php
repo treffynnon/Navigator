@@ -26,7 +26,7 @@ class DmsParserTest extends PHPUnit_Framework_TestCase {
     
     /**
      * @dataProvider coordInvalidProvider
-     * @expectedException Treffynnon\InvalidCoordinateFormatException
+     * @expectedException Treffynnon\Navigator\Exception\InvalidCoordinateFormatException
      */
     public function testInvalidSet($coord) {
         $DmsParser = new C\DmsParser;
