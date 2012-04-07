@@ -2,9 +2,9 @@
 
 require_once __DIR__ . '/../lib/Treffynnon/Navigator.php';
 
-use Treffynnon as T;
+use Treffynnon\Navigator as N;
 
-$Navigator = new T\Navigator;
+N::autoloader();
 
 class NavigatorTestData {
 
@@ -61,8 +61,8 @@ class NavigatorTestData {
 
     public static function coordDirectionData_valid() {
         return array(
-            array(T\Navigator::Lat),
-            array(T\Navigator::Long),
+            array(N::Lat),
+            array(N::Long),
         );
     }
 
