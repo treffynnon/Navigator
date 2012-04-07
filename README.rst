@@ -13,4 +13,9 @@ A PHP library for geographic calculations:
 
 This is an improved (PHP5.3+) and tested version of `Geographic Calculations in PHP`_.
 
+Licence
+'''''''
+
+This library is under a permissive "new" BSD licence.
+
 .. _Geographic Calculations in PHP: https://github.com/treffynnon/Geographic-Calculations-in-PHP
