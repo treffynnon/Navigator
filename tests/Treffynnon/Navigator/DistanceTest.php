@@ -14,6 +14,14 @@ class DistanceTest extends PHPUnit_Framework_TestCase {
 		$metres = $Distance->get(new stdClass, new stdClass);
 	}
 
+    public function testGet() {
+        $point1 = new N\LatLong(new N\Coordinate(80.9), new N\Coordinate(20.1));
+        $point2 = new N\LatLong(new N\Coordinate(20.1), new N\Coordinate(80.9));
+        $Distance = new N\Distance($point1, $point2);
+        $metres = $Distance->get(new N\Distance\Calculator\Haversine, new N\Distance\Converter\MetreToFurlong);
+        $this->assertEquals(36305.738730148, $metres, '', 0.2);
+    }
+
     public function testConstructor() {
         $point1 = new N\LatLong(new N\Coordinate(80.9), new N\Coordinate(20.1));
         $point2 = new N\LatLong(new N\Coordinate(20.1), new N\Coordinate(80.9));
