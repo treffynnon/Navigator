@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Treffynnon": "lib"
+            "Treffynnon\\Navigator": "lib"
         }
     }
 }
