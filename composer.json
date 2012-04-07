@@ -1,0 +1,23 @@
+{
+    "name": "Treffynnon/Navigator",
+    "type": "library",
+    "description": "Geographic calculations for PHP",
+    "keywords": ["distance","geography","navigaton"],
+    "homepage": "http://github.com/treffynnon/Navigator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simon Holywell",
+            "email": "treffynnon@php.net",
+            "homepage": "http://simonholywell.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "Treffynnon": "lib"
+        }
+    }
+}
