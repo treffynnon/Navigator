@@ -1,7 +1,19 @@
 <?php
 
+/**
+ * Navigator: a geographic calculation library for PHP
+ * @link http://navigator.simonholywell.com
+ * @license http://www.opensource.org/licenses/bsd-license.php BSD 2-Clause License 
+ * @copyright 2012, Simon Holywell
+ * @author Simon Holywell <treffynnon@php.net>
+ */
+
 namespace Treffynnon\Navigator\Distance\Converter;
 
+/**
+ * A couple of alias functions for a shorter syntax when using the
+ * converter objects that extend this abstract
+ */
 abstract class ConverterAbstract {
 
     /**
@@ -33,4 +45,5 @@ abstract class ConverterAbstract {
     public function r($distance) {
         return $this->reverse($distance);
     }
+
 }

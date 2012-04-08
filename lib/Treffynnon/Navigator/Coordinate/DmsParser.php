@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Navigator: a geographic calculation library for PHP
+ * @link http://navigator.simonholywell.com
+ * @license http://www.opensource.org/licenses/bsd-license.php BSD 2-Clause License 
+ * @copyright 2012, Simon Holywell
+ * @author Simon Holywell <treffynnon@php.net>
+ */
+
 namespace Treffynnon\Navigator\Coordinate;
 
 use Treffynnon\Navigator as N;
@@ -25,6 +33,8 @@ class DmsParser extends ParserAbstract {
 
     /**
      * Used when setting a value in the Coordinate class.
+     * @example parse('10° 5\' 30"N');
+     * @example parse('10 5 30N');
      * @param string $coord
      * @return float
      */

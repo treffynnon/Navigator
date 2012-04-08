@@ -1,11 +1,22 @@
 <?php
 
+/**
+ * Navigator: a geographic calculation library for PHP
+ * @link http://navigator.simonholywell.com
+ * @license http://www.opensource.org/licenses/bsd-license.php BSD 2-Clause License 
+ * @copyright 2012, Simon Holywell
+ * @author Simon Holywell <treffynnon@php.net>
+ */
+
 require_once __DIR__ . '/../lib/Treffynnon/Navigator.php';
 
 use Treffynnon\Navigator as N;
 
 N::autoloader();
 
+/**
+ * Base set of data to use for testing
+ */
 class NavigatorTestData {
 
     public static function coordData_decimal_valid() {

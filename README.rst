@@ -16,6 +16,7 @@ This is an improved (PHP5.3+) and tested version of `Geographic Calculations in 
 Licence
 '''''''
 
-This library is under a permissive "new" BSD licence.
+This library is under a permissive `BSD 2-Clause License`_.
 
 .. _Geographic Calculations in PHP: https://github.com/treffynnon/Geographic-Calculations-in-PHP
+.. _BSD 2-Clause License: http://www.opensource.org/licenses/bsd-license.php

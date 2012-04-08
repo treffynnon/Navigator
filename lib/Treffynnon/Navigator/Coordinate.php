@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Navigator: a geographic calculation library for PHP
+ * @link http://navigator.simonholywell.com
+ * @license http://www.opensource.org/licenses/bsd-license.php BSD 2-Clause License 
+ * @copyright 2012, Simon Holywell
+ * @author Simon Holywell <treffynnon@php.net>
+ */
+
 namespace Treffynnon\Navigator;
 
 use Treffynnon\Navigator\Coordinate as C;
@@ -45,7 +53,7 @@ class Coordinate {
      * @return \Treffynnon\Navigator\Coordinate\DecimalParser|\Treffynnon\Navigator\Coordinate\DmsParser 
      */
     public function guessParser($coord) {
-        if(!is_numeric($coord) and !is_null($coord)) {
+        if (!is_numeric($coord) and !is_null($coord)) {
             return new C\DmsParser;
         }
         return new C\DecimalParser;
@@ -90,7 +98,7 @@ class Coordinate {
      * @return ParserInterface
      */
     public function &getParser() {
-        if(is_null($this->parser)) {
+        if (is_null($this->parser)) {
             $this->setParser($this->guessParser($this->get()));
         }
         return $this->parser;

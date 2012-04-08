@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Navigator: a geographic calculation library for PHP
+ * @link http://navigator.simonholywell.com
+ * @license http://www.opensource.org/licenses/bsd-license.php BSD 2-Clause License 
+ * @copyright 2012, Simon Holywell
+ * @author Simon Holywell <treffynnon@php.net>
+ */
 use Treffynnon\Navigator as N;
 use Treffynnon\Navigator\Coordinate as C;
 
@@ -23,7 +30,7 @@ class DmsParserTest extends PHPUnit_Framework_TestCase {
         $DmsParser = new C\DmsParser;
         $this->assertInternalType('float', $DmsParser->set($coord));
     }
-    
+
     /**
      * @dataProvider coordInvalidProvider
      * @expectedException Treffynnon\Navigator\Exception\InvalidCoordinateFormatException
@@ -32,9 +39,9 @@ class DmsParserTest extends PHPUnit_Framework_TestCase {
         $DmsParser = new C\DmsParser;
         $DmsParser->set($coord);
     }
-    
+
     /**
-     *@dataProvider coordValidProvider
+     * @dataProvider coordValidProvider
      * @param type $coord 
      */
     public function testGet($coord) {
@@ -44,7 +51,7 @@ class DmsParserTest extends PHPUnit_Framework_TestCase {
         $this->assertInternalType('string', $text);
         $this->assertRegExp('/\d{1,2} \d{1,2} [\d.]+[N,S,E,W]?/', $text);
     }
-    
+
     public function coordValidProvider() {
         return NavigatorTestData::coordData_dms_valid();
     }

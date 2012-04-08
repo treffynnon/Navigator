@@ -1,12 +1,21 @@
 <?php
 
+/**
+ * Navigator: a geographic calculation library for PHP
+ * @link http://navigator.simonholywell.com
+ * @license http://www.opensource.org/licenses/bsd-license.php BSD 2-Clause License 
+ * @copyright 2012, Simon Holywell
+ * @author Simon Holywell <treffynnon@php.net>
+ */
+
 namespace Treffynnon\Navigator\Coordinate;
 
 use Treffynnon\Navigator as N;
 use Treffynnon\Navigator\Exception as E;
 
 /**
- * @todo Convert this to be a trait when PHP 5.4 support improves
+ * A base set of methods to set a direction (N,S,E,W) and validate
+ * coordinates for classes that extend this abstract
  */
 abstract class ParserAbstract {
 

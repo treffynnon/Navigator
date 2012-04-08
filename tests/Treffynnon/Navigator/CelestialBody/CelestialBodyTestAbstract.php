@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Navigator: a geographic calculation library for PHP
+ * @link http://navigator.simonholywell.com
+ * @license http://www.opensource.org/licenses/bsd-license.php BSD 2-Clause License 
+ * @copyright 2012, Simon Holywell
+ * @author Simon Holywell <treffynnon@php.net>
+ */
 use Treffynnon\Navigator as N;
 use Treffynnon\Navigator\Distance\Calculator as C;
 use Treffynnon\Navigator\CelestialBody as CB;
@@ -7,11 +14,15 @@ use Treffynnon\Navigator\CelestialBody as CB;
 abstract class CelestialBodyTestAbstract extends PHPUnit_Framework_TestCase {
 
     public abstract function getObject();
+
     public abstract function vincentyDataProvider();
+
     public abstract function cosineLawDataProvider();
+
     public abstract function greatCircleDataProvider();
+
     public abstract function haversineDataProvider();
-    
+
     public function testExtendsAbstract() {
         $CelestialBody = $this->getObject();
         $this->assertInstanceOf('Treffynnon\Navigator\CelestialBody\CelestialBodyAbstract', $CelestialBody);
@@ -34,7 +45,7 @@ abstract class CelestialBodyTestAbstract extends PHPUnit_Framework_TestCase {
         $this->assertClassHasAttribute('equatorialRadius', get_class($CelestialBody));
         $this->assertNotNull($CelestialBody->equatorialRadius);
     }
-    
+
     /**
      * @dataProvider vincentyDataProvider 
      */
@@ -84,11 +95,12 @@ abstract class CelestialBodyTestAbstract extends PHPUnit_Framework_TestCase {
     }
 
     public function mergeCoordArrays($data, $results) {
-        foreach($data as $key => $coords) {
-            if(array_key_exists($key, $results)) {
+        foreach ($data as $key => $coords) {
+            if (array_key_exists($key, $results)) {
                 $results[$key] = array_merge($coords, $results[$key]);
             }
         }
         return $results;
     }
+
 }
