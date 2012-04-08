@@ -1,10 +1,6 @@
 Introduction
 ============
 
-.. image:: https://secure.travis-ci.org/treffynnon/Navigator.png?branch=master
-    :alt: Build Status
-    :target: http://travis-ci.org/treffynnon/Navigator
-
 A PHP library for geographic calculations:
 
 * Calculate the distance between two coordinate points on the earth's surface (using Vincenty, Haversine, Great Circle or The Cosine Law)

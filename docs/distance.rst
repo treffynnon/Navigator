@@ -38,11 +38,48 @@ The Navigator library comes with four distance calculators by default:
 
 Of the selection Vincenty is the most accurate and also the default. It is the most computationally intensive, but not prohibitively so by any stretch.
 
-Custom Calculators
-''''''''''''''''''
+Celestial Bodies
+^^^^^^^^^^^^^^^^
 
-As with coordinate parsers it is a trivial matter to create custom calculators.
+Most commonly and by default Navigator will be using Earth, but it can be altered by passing in a different `Celestial Body` such as `Mars` or the `Moon`::
+
+    <?php
+    use Treffynnon\Navigator\CelestialBody\Mars as M;
+    use Treffynnon\Navigator\Distance as D;
+    $distance = $Distance->get(new D\Calculator\GreatCircle(new M),
+                               new D\Converter\MetreToNauticalMile);
+    ?>
+
+Custom Celestial Bodies
+-----------------------
+
+Custom celestial bodies are very simple to setup with a set of statistics - see `Treffynnon\\Navigator\\CelestialBody\\CelestialBodyAbstract` for more information.
+
+Custom Calculators
+^^^^^^^^^^^^^^^^^^
+
+As with coordinate parsers it is a trivial matter to create custom calculators. Simply extend the abstract class - `Treffynnon\\Navigator\\Distance\\Calculator\\CalculatorAbstract`.
 
 Converters
 ''''''''''
 
+Converters can be used independently of the Navigator library or injected into the `Distance->get()` method. By default Navigator returns distances in metres, but this can be converted to the following units:
+
+- Furlong
+- Kilometre
+- League
+- Mile
+- Nautical Mile
+- Parsec
+
+An example follows::
+
+    <?php
+    use Treffynnon\Navigator\Distance\Converter\MetreToFurlong as F;
+    $distance = $Distance->get(null, new F);
+    ?>
+
+Custom Converters
+^^^^^^^^^^^^^^^^^
+
+As with custom calculators, but even simpler! See `Treffynnon\\Navigator\\Distance\\Converter\\ConverterAbstract`.
