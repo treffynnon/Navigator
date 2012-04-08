@@ -98,9 +98,6 @@ class Coordinate {
      * @return ParserInterface
      */
     public function &getParser() {
-        if (is_null($this->parser)) {
-            $this->setParser($this->guessParser($this->get()));
-        }
         return $this->parser;
     }
 

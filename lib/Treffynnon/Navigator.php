@@ -34,7 +34,7 @@ class Navigator {
      * Setup the autoloader to load the Treffynnon\Navigator library
      */
     public static function autoloader() {
-        spl_autoload_register(array('self', '_autoloader'));
+        return spl_autoload_register(array('self', '_autoloader'));
     }
 
     /**

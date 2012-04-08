@@ -37,4 +37,8 @@ class NavigatorTest extends PHPUnit_Framework_TestCase {
         return NavigatorTestData::pointsData_valid();
     }
 
+    public function testAutoloader() {
+        $this->assertTrue(N::autoloader());
+    }
+
 }

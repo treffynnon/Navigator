@@ -47,6 +47,28 @@ class DmsParserTest extends PHPUnit_Framework_TestCase {
     public function testGet($coord) {
         $DmsParser = new C\DmsParser;
         $radian = $DmsParser->set($coord);
+        if($radian > 1.5) {
+            $DmsParser->setDirection(N::Long);
+        } else {
+            $DmsParser->setDirection(N::Lat);
+        }
+        $text = $DmsParser->get($radian);
+        $this->assertInternalType('string', $text);
+        $this->assertRegExp('/\d{1,2} \d{1,2} [\d.]+[N,S,E,W]?/', $text);
+    }
+
+    /**
+     * @dataProvider coordValidProvider
+     * @param type $coord 
+     */
+    public function testGetWithDirection($coord) {
+        $DmsParser = new C\DmsParser;
+        $radian = $DmsParser->set($coord);
+        if($radian > 1.5) {
+            $DmsParser->setDirection(N::Long);
+        } else {
+            $DmsParser->setDirection(N::Lat);
+        }
         $text = $DmsParser->get($radian);
         $this->assertInternalType('string', $text);
         $this->assertRegExp('/\d{1,2} \d{1,2} [\d.]+[N,S,E,W]?/', $text);

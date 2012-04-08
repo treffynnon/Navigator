@@ -97,6 +97,12 @@ class CoordinateTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($coord, $coord_out, '', 0.2);
     }
 
+    public function testGuessParserWithDMS() {
+        $Coordinate = new N\Coordinate();
+        $return = $Coordinate->guessParser('10 10 10N');
+        $this->assertInstanceOf('Treffynnon\\Navigator\\Coordinate\\DmsParser', $return);
+    }
+
     public function coordValidProvider() {
         return NavigatorTestData::coordData_decimal_valid();
     }

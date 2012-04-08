@@ -57,6 +57,8 @@ class NavigatorTestData {
             array('89° 40\' 40"N'),
             array('10° 36\' 12"S'),
             array('76 21 19.213459S'),
+            array('1 1 1N'),
+            array('167 20 10.16586965W'),
         );
     }
 
