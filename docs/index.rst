@@ -9,11 +9,6 @@ A PHP library for geographic calculations:
 
 This is an improved (PHP5.3+) and tested version of `Geographic Calculations in PHP`_.
 
-Licence
-'''''''
-
-This library is under a permissive `BSD 2-Clause License`_.
-
 Contents:
 
 .. toctree::
@@ -26,6 +21,7 @@ Contents:
    distance
    tests
    contributing
+   licence
 
 Indices and tables
 ==================
