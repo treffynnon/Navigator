@@ -1,5 +1,5 @@
-Navigator_.
-===========
+Navigator_
+==========
 
 .. image:: https://secure.travis-ci.org/treffynnon/Navigator.png?branch=master
     :alt: Build Status
@@ -18,7 +18,7 @@ For more information and documentation please see `navigator.simonholywell.com`_
 Documentation
 '''''''''''''
 
-* `API (phpDocumentor) Docs`_.
+* `Read The Docs`_
 
 Licence
 '''''''
@@ -29,4 +29,4 @@ This library is under a permissive `BSD 2-Clause License`_.
 .. _BSD 2-Clause License: http://www.opensource.org/licenses/bsd-license.php
 .. _navigator.simonholywell.com: http://navigator.simonholywell.com
 .. _Navigator: http://navigator.simonholywell.com
-.. _API (phpDocumentor) Docs: http://navigator.simonholywell.com/apidocs/namespaces/Treffynnon.html
+.. _Read The Docs: http://navigator.simonholywell.com
