@@ -7,7 +7,7 @@ A PHP library for geographic calculations:
 * Conversion between units (metres to kilometres, nautical miles and miles).
 * Convert coordinate notation (decimals to degrees, minutes & seconds and back again).
 
-This is an improved (PHP5.3+) and tested version of `Geographic Calculations in PHP`_.
+This is an improved (PHP5.3.2+) and tested version of `Geographic Calculations in PHP`_.
 
 Contents:
 

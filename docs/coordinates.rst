@@ -1,7 +1,7 @@
 Coordinates
 ===========
 
-The coordinate class must be combined with :doc:`<latlong>` to create a point on the celestial bodies surfaces (most commonly this is the Earth). It handles the storage of a supplied coordinate value and its conversion to radians for internal use by :doc:`<coordinates>`.
+The coordinate class must be combined with :doc:`LatLong <latlong>` to create a point on the celestial bodies surfaces (most commonly this is the Earth). It handles the storage of a supplied coordinate value and its conversion to radians for internal use by :doc:`Calculators <distance>`.
 
 This scheme makes it easy to supply a custom coordinate parser or specify whether to use `Decimal` or `Degrees Minutes Seconds` notation from the standard set of parsers::
 
