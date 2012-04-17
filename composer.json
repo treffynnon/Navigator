@@ -4,7 +4,7 @@
     "description": "Geographic calculations for PHP",
     "keywords": ["distance","geography","navigaton"],
     "homepage": "http://github.com/treffynnon/Navigator",
-    "license": "MIT",
+    "license": "BSD",
     "authors": [
         {
             "name": "Simon Holywell",
