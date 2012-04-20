@@ -36,7 +36,7 @@ Composer also automatically generates an autoload file that you can use to autol
 
 .. code-block:: php
 
-    require 'vendor/.composer/autoload.php';
+    require 'vendor/autoload.php';
 
 Navigator is now installed in your project with Composer_ meaning that it is easy to keep up to date!
 
