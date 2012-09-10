@@ -27,7 +27,6 @@ Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 
 .. _Geographic Calculations in PHP: https://github.com/treffynnon/Geographic-Calculations-in-PHP

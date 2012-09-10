@@ -36,7 +36,7 @@ Composer also automatically generates an autoload file that you can use to autol
 
 .. code-block:: php
 
-    require 'vendor/autoload.php';
+    <?php require 'vendor/autoload.php';
 
 Navigator is now installed in your project with Composer_ meaning that it is easy to keep up to date!
 
@@ -57,6 +57,7 @@ Then to initialise the autoloader for the Navigator library add the following to
 
 .. code-block:: php
 
+    <?php
     require_once __DIR__ . 'Navigator/lib/Treffynnon/Navigator.php';
     use Treffynnon\Navigator as N;
     N::autoloader();

@@ -1,7 +1,9 @@
 Distance
 ========
 
-When `Distance` is supplied with two instances of `LatLng` it can be used to calculate the distance between the points. It does this by using a `Calculator` such as `Great Circle` and optionally a unit converter such as `MetreToNauticalMile`::
+When `Distance` is supplied with two instances of `LatLng` it can be used to calculate the distance between the points. It does this by using a `Calculator` such as `Great Circle` and optionally a unit converter such as `MetreToNauticalMile`:
+
+.. code-block:: php
 
     <?php
     use Treffynnon\Navigator as N;
@@ -14,15 +16,15 @@ When `Distance` is supplied with two instances of `LatLng` it can be used to cal
         new N\Coordinate(-13.456)
     );
     $Distance = new N\Distance($coord1, $coord2);
-    ?>
 
-Specify the calculator and conversion on the `get()` method of `Distance`::
+Specify the calculator and conversion on the `get()` method of `Distance`:
+
+.. code-block:: php
 
     <?php
     use Treffynnon\Navigator\Distance as D;
     $distance = $Distance->get(new D\Calculator\GreatCircle,
                                new D\Converter\MetreToNauticalMile);
-    ?>
     
 `$distance` now has the distance value calculated by Great Circle in Nautical Miles.
 
@@ -41,14 +43,15 @@ Of the selection Vincenty is the most accurate and also the default. It is the m
 Celestial Bodies
 ^^^^^^^^^^^^^^^^
 
-Most commonly and by default Navigator will be using Earth, but it can be altered by passing in a different `Celestial Body` such as `Mars` or the `Moon`::
+Most commonly and by default Navigator will be using Earth, but it can be altered by passing in a different `Celestial Body` such as `Mars` or the `Moon`:
+
+.. code-block:: php
 
     <?php
     use Treffynnon\Navigator\CelestialBody\Mars as M;
     use Treffynnon\Navigator\Distance as D;
     $distance = $Distance->get(new D\Calculator\GreatCircle(new M),
                                new D\Converter\MetreToNauticalMile);
-    ?>
 
 Custom Celestial Bodies
 -----------------------
@@ -72,12 +75,13 @@ Converters can be used independently of the Navigator library or injected into t
 - Nautical Mile
 - Parsec
 
-An example follows::
+An example follows:
+
+.. code-block:: php
 
     <?php
     use Treffynnon\Navigator\Distance\Converter\MetreToFurlong as F;
     $distance = $Distance->get(null, new F);
-    ?>
 
 Custom Converters
 ^^^^^^^^^^^^^^^^^

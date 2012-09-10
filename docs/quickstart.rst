@@ -6,12 +6,13 @@ Please ensure you have completed the :doc:`installation instructions<installatio
 Super Simple Example
 ''''''''''''''''''''
 
-This is the easiest way to get a quick distance between two points of the Earth in metres::
+This is the easiest way to get a quick distance between two points of the Earth in metres.
+
+.. code-block:: php
 
     <?php
     use Treffynnon\Navigator as N;
     $distance = N::getDistance(10, 81.098, 15.6, '5° 10\' 11.009"W');
-    ?>
 
 The function takes a sequence of latitude and longitude values:
 
@@ -32,7 +33,9 @@ The function takes a sequence of latitude and longitude values:
 A Slightly More Advanced Example
 ''''''''''''''''''''''''''''''''
 
-To get more control over the setup of the distance calculation you can make use of the distance factory. The following snippet will give the `$distance` using the Haversine formula and converted to parsecs::
+To get more control over the setup of the distance calculation you can make use of the distance factory. The following snippet will give the `$distance` using the Haversine formula and converted to parsecs.
+
+.. code-block:: php
 
     <?php
     use Treffynnon\Navigator as N;
