@@ -42,8 +42,10 @@ class Navigator {
      * @param string $class_name
      */
     private static function _autoloader($class_name) {
-        $class_path = realpath(__DIR__ . '/..') . '/' . str_replace('\\', DIRECTORY_SEPARATOR, $class_name);
-        require_once $class_path . '.php';
+        if('Treffynnon\\Navigator' === substr(ltrim($class_name, '\\'), 0, 20)) {
+            $class_path = realpath(__DIR__ . '/..') . '/' . str_replace('\\', DIRECTORY_SEPARATOR, $class_name);
+            require_once $class_path . '.php';
+        }
     }
 
     /**
