@@ -1,6 +1,10 @@
 Navigator_
 ==========
 
+.. image:: http://api.flattr.com/button/flattr-badge-large.png
+    :alt: Flattr this git repo
+    :target: http://flattr.com/thing/1146011/
+
 .. image:: https://secure.travis-ci.org/treffynnon/Navigator.png?branch=master
     :alt: Build Status
     :target: http://travis-ci.org/treffynnon/Navigator
