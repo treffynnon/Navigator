@@ -46,4 +46,13 @@ class LatLongTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($latitude . ',' . $longitude, (string) $LatLong);
     }
 
+    public function testFromString() {
+        $latitude = '42.77';
+        $longitude = '-2.86844';
+        $LatLong = N\LatLong::createFromString($latitude . ',' . $longitude);
+        $this->assertInstanceOf('Treffynnon\Navigator\LatLong', $LatLong);
+        $this->assertEquals($latitude, (string) $LatLong->getLatitude());
+        $this->assertEquals($longitude, (string) $LatLong->getLongitude());
+    }
+
 }
