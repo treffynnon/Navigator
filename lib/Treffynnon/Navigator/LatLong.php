@@ -10,7 +10,6 @@
 
 namespace Treffynnon\Navigator;
 
-use Treffynnon as T;
 use Treffynnon\Navigator as N;
 
 /**
@@ -46,8 +45,8 @@ class LatLong {
      * necessary 
      */
     protected function primeCoordinateParsers() {
-        $this->latitude->getParser()->setDirection(N::Lat);
-        $this->longitude->getParser()->setDirection(N::Long);
+        $this->latitude->getParser()->setDirection(N::LAT);
+        $this->longitude->getParser()->setDirection(N::LONG);
     }
 
     /**

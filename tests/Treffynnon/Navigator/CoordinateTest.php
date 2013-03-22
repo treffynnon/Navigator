@@ -76,7 +76,7 @@ class CoordinateTest extends PHPUnit_Framework_TestCase {
     public function testInvalidSetLatCoordinate($coord) {
         $Coordinate = new N\Coordinate;
         // must set a parser and direction
-        $Coordinate->setParser(new C\DecimalParser(N::Lat));
+        $Coordinate->setParser(new C\DecimalParser(N::LAT));
         $Coordinate->set($coord);
         $coord_out = (string) $Coordinate;
         $this->assertInternalType('string', $coord_out);
@@ -90,7 +90,7 @@ class CoordinateTest extends PHPUnit_Framework_TestCase {
     public function testInvalidSetLongCoordinate($coord) {
         $Coordinate = new N\Coordinate;
         // must set a parser and direction
-        $Coordinate->setParser(new C\DecimalParser(N::Long));
+        $Coordinate->setParser(new C\DecimalParser(N::LONG));
         $Coordinate->set($coord);
         $coord_out = (string) $Coordinate;
         $this->assertInternalType('string', $coord_out);

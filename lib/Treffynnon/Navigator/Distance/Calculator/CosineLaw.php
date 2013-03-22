@@ -11,7 +11,6 @@
 namespace Treffynnon\Navigator\Distance\Calculator;
 
 use Treffynnon\Navigator as N;
-use Treffynnon\Navigator\CelestialBody as CB;
 
 /**
  * Use the Cosine Law to calculate the distance between two points 

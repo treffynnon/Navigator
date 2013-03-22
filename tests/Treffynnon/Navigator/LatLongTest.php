@@ -32,10 +32,10 @@ class LatLongTest extends PHPUnit_Framework_TestCase {
         $LatLong = new N\LatLong($latitude, $longitude);
 
         $this->assertEquals(
-            $LatLong->getLongitude()->getParser()->getDirection(), T\Navigator::Long
+            $LatLong->getLongitude()->getParser()->getDirection(), T\Navigator::LONG
         );
         $this->assertEquals(
-            $LatLong->getLatitude()->getParser()->getDirection(), T\Navigator::Lat
+            $LatLong->getLatitude()->getParser()->getDirection(), T\Navigator::LAT
         );
     }
 

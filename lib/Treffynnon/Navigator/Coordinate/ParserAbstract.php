@@ -48,8 +48,8 @@ abstract class ParserAbstract {
      * @param string $direction
      */
     public function setDirection($direction) {
-        if ($direction === N::Lat
-            or $direction === N::Long) {
+        if ($direction === N::LAT
+            or $direction === N::LONG) {
             $this->direction = $direction;
         } else {
             throw new E\InvalidDirectionException('You can only supply Treffynnon\Navigator::Long or Treffynnon\Navigator::Lat');
@@ -65,10 +65,10 @@ abstract class ParserAbstract {
      */
     public function set($coord) {
         $radians = $this->parse($coord);
-        if ($this->getDirection() == N::Lat
+        if ($this->getDirection() == N::LAT
             and ($radians < -1.5707963267949 or $radians > 1.5707963267949)) {
             throw new E\InvalidCoordinateValueException('Latitude may not be greater than 90 or lower than -90');
-        } elseif ($this->getDirection() == N::Long
+        } elseif ($this->getDirection() == N::LONG
             and ($radians < -3.1415926535898 or $radians > 3.1415926535898)) {
             throw new E\InvalidCoordinateValueException('Longitude may not be greater than 180 or lower than -180');
         }

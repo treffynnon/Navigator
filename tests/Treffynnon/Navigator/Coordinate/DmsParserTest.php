@@ -48,9 +48,9 @@ class DmsParserTest extends PHPUnit_Framework_TestCase {
         $DmsParser = new C\DmsParser;
         $radian = $DmsParser->set($coord);
         if($radian > 1.5) {
-            $DmsParser->setDirection(N::Long);
+            $DmsParser->setDirection(N::LONG);
         } else {
-            $DmsParser->setDirection(N::Lat);
+            $DmsParser->setDirection(N::LAT);
         }
         $text = $DmsParser->get($radian);
         $this->assertInternalType('string', $text);
@@ -65,9 +65,9 @@ class DmsParserTest extends PHPUnit_Framework_TestCase {
         $DmsParser = new C\DmsParser;
         $radian = $DmsParser->set($coord);
         if($radian > 1.5) {
-            $DmsParser->setDirection(N::Long);
+            $DmsParser->setDirection(N::LONG);
         } else {
-            $DmsParser->setDirection(N::Lat);
+            $DmsParser->setDirection(N::LAT);
         }
         $text = $DmsParser->get($radian);
         $this->assertInternalType('string', $text);

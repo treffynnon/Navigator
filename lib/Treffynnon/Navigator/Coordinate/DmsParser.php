@@ -71,12 +71,12 @@ class DmsParser extends ParserAbstract {
         $coord = rad2deg($coord);
         $degrees = (integer) $coord;
         $compass = '';
-        if ($this->direction == N::Lat) {
+        if ($this->direction == N::LAT) {
             if ($degrees < 0)
                 $compass = 'S';
             elseif ($degrees > 0)
                 $compass = 'N';
-        }elseif ($this->direction == N::Long) {
+        }elseif ($this->direction == N::LONG) {
             if ($degrees < 0)
                 $compass = 'W';
             elseif ($degrees > 0)

@@ -74,8 +74,8 @@ class NavigatorTestData {
 
     public static function coordDirectionData_valid() {
         return array(
-            array(N::Lat),
-            array(N::Long),
+            array(N::LAT),
+            array(N::LONG),
         );
     }
 

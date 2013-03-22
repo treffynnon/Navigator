@@ -13,8 +13,8 @@ use Treffynnon\Navigator as N;
 class NavigatorTest extends PHPUnit_Framework_TestCase {
 
     public function testStaticAttributes() {
-        $this->assertEquals('Lat', N::Lat);
-        $this->assertEquals('Long', N::Long);
+        $this->assertEquals('Lat', N::LAT);
+        $this->assertEquals('Long', N::LONG);
     }
 
     /**

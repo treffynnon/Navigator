@@ -11,7 +11,6 @@
 namespace Treffynnon\Navigator\Distance\Calculator;
 
 use Treffynnon\Navigator as N;
-use Treffynnon\Navigator\CelestialBody as CB;
 
 /**
  * Use the Haversine formula to calculate the distance between

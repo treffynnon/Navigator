@@ -23,25 +23,25 @@ class Navigator {
      * @var string
      */
 
-    const Lat = 'Lat';
+    const LAT = 'Lat';
     /**
      * Used to define a coordinate as a longitude
      * @var string
      */
-    const Long = 'Long';
+    const LONG = 'Long';
 
     /**
      * Setup the autoloader to load the Treffynnon\Navigator library
      */
     public static function autoloader() {
-        return spl_autoload_register(array('self', '_autoloader'));
+        return spl_autoload_register(array('self', '_autoLoader'));
     }
 
     /**
      * Convert class names into file paths for inclusion
      * @param string $class_name
      */
-    private static function _autoloader($class_name) {
+    private static function _autoLoader($class_name) {
         $class_path = realpath(__DIR__ . '/..') . '/' . str_replace('\\', DIRECTORY_SEPARATOR, $class_name);
         require_once $class_path . '.php';
     }
