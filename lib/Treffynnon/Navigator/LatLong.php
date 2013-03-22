@@ -72,4 +72,15 @@ class LatLong {
     public function __toString() {
         return $this->getLatitude() . ',' . $this->getLongitude();
     }
+
+    /**
+     * Create a LatLong object based on a comma separated coordinates string (latitude, longitude)
+     *
+     * @param  string $string
+     * @return LatLong
+     */
+    public static function createFromString($string) {
+        list($latitude, $longitude) = explode(',', $string);
+        return new static(new Coordinate($latitude), new Coordinate($longitude));
+    }
 }
