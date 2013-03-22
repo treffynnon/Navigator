@@ -39,4 +39,11 @@ class LatLongTest extends PHPUnit_Framework_TestCase {
         );
     }
 
+    public function testToString() {
+        $latitude = new N\Coordinate(42.77);
+        $longitude = new N\Coordinate(-2.86844);
+        $LatLong = new N\LatLong($latitude, $longitude);
+        $this->assertEquals($latitude . ',' . $longitude, (string) $LatLong);
+    }
+
 }
