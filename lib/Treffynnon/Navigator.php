@@ -34,14 +34,14 @@ class Navigator {
      * Setup the autoloader to load the Treffynnon\Navigator library
      */
     public static function autoloader() {
-        return spl_autoload_register(array('self', '_autoLoader'));
+        return spl_autoload_register(array('self', 'splAutoloader'));
     }
 
     /**
      * Convert class names into file paths for inclusion
      * @param string $class_name
      */
-    private static function _autoLoader($class_name) {
+    private static function splAutoloader($class_name) {
         if('Treffynnon\\Navigator' === substr(ltrim($class_name, '\\'), 0, 20)) {
             $class_path = realpath(__DIR__ . '/..') . '/' . str_replace('\\', DIRECTORY_SEPARATOR, $class_name);
             require_once $class_path . '.php';
