@@ -14,7 +14,7 @@ In your projects `composer.json` file you should enter the following information
 
     {
         "require": {
-            "treffynnon/navigator": "1.*",
+            "treffynnon/navigator": "1.*"
         }
     }
 
