@@ -30,4 +30,4 @@ This library is under a permissive `BSD 2-Clause License`_.
 
 .. _Geographic Calculations in PHP: https://github.com/treffynnon/Geographic-Calculations-in-PHP
 .. _BSD 2-Clause License: http://www.opensource.org/licenses/bsd-license.php
-.. _the documentation: http://navigator.readthedocs.org
+.. _the documentation: http://navigator.simonholywell.com
