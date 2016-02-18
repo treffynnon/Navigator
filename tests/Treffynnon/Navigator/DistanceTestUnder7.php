@@ -8,16 +8,24 @@
  * @author Simon Holywell <treffynnon@php.net>
  */
 use Treffynnon\Navigator as N;
-use Treffynnon\Navigator\Distance\Calculator as C;
 
-class CosineLawTest extends PHPUnit_Framework_TestCase {
+class DistanceTestUnder7 extends PHPUnit_Framework_TestCase {
 
-    public function testCalculate() {
-        $CosineLaw = new C\CosineLaw;
+    /**
+     * @expectedException PHPUnit_Framework_Error
+     */
+    public function testFailedGet() {
         $point1 = new N\LatLong(new N\Coordinate(80.9), new N\Coordinate(20.1));
         $point2 = new N\LatLong(new N\Coordinate(20.1), new N\Coordinate(80.9));
-        $metres = $CosineLaw->calculate($point1, $point2);
-        $this->assertEquals(7303552.8457791, $metres, '', 0.2);
+        $Distance = new N\Distance($point1, $point2);
+        $metres = $Distance->get(new stdClass, new stdClass);
+    }
+
+    /**
+     * @expectedException PHPUnit_Framework_Error
+     */
+    public function testFailedConstructor() {
+        $Distance = new N\Distance(new stdClass, new stdClass);
     }
 
 }

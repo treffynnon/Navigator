@@ -1,0 +1,12 @@
+<phpunit backupGlobals="true"
+         backupStaticAttributes="false"
+         bootstrap="tests/bootstrap.php"
+         cacheTokens="false"
+         colors="true">
+    <testsuites>
+        <testsuite name="Navigator Test Suite">
+            <directory suffix="Test.php">tests</directory>
+            <directory suffix="TestUnder7.php" phpVersion="6" phpVersionOperator="&lt;=">tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

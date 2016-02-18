@@ -18,14 +18,6 @@ class CoordinateTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('Treffynnon\Navigator\Coordinate\DecimalParser', $Coordinate->getParser());
     }
 
-    /**
-     * @expectedException PHPUnit_Framework_Error
-     */
-    public function testIncorrectParser() {
-        $Coordinate = new N\Coordinate;
-        $Coordinate->setParser(new stdClass());
-    }
-
     public function testDefaultParser() {
         $Coordinate = new N\Coordinate;
         $this->assertInstanceOf('Treffynnon\Navigator\Coordinate\DecimalParser', $Coordinate->getParser());

@@ -11,7 +11,7 @@ use Treffynnon as T;
 use Treffynnon\Navigator as N;
 use Treffynnon\Navigator\Coordinate as C;
 
-class LatLongTest extends PHPUnit_Framework_TestCase {
+class LatLongTestUnder7 extends PHPUnit_Framework_TestCase {
 
     public function testConstructor() {
         $latitude = new N\Coordinate(10.03);
