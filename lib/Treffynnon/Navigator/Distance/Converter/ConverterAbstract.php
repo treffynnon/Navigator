@@ -17,16 +17,22 @@ namespace Treffynnon\Navigator\Distance\Converter;
 abstract class ConverterAbstract {
 
     /**
+     * Convert the supplied value using factor
      * @param float Value to be converted
-     * @param mixed Converted value 
+     * @return mixed Converted value 
      */
-    abstract public function convert($distance);
+    public function convert($distance) {
+        return $distance * $this->factor;
+    }
 
     /**
+     * Convert the supplied value by reversing the factor
      * @param float Value to be reverse converted
-     * @param mixed Reversed value 
+     * @return mixed Reversed value 
      */
-    abstract public function reverse($distance);
+    public function reverse($distance) {
+        return $distance / $this->factor;
+    }
 
     /**
      * Convert the distance
