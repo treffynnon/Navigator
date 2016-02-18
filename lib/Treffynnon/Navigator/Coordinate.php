@@ -35,7 +35,7 @@ class Coordinate {
      * @param string|float $coord
      * @param ParserInterface $parser
      */
-    public function __construct($coord = null, C\ParserAbstract $parser = null) {
+    public function __construct($coord = null, C\ParserInterface $parser = null) {
         if (is_null($parser)) {
             $parser = $this->guessParser($coord);
         }
@@ -89,7 +89,7 @@ class Coordinate {
      * Set the parser that should be used to manage this coordinate
      * @param ParserInterface $parser
      */
-    public function setParser(C\ParserAbstract $parser) {
+    public function setParser(C\ParserInterface $parser) {
         $this->parser = $parser;
     }
 

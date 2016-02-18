@@ -42,10 +42,10 @@ class Distance {
      * no calculator is supplied. If no unit converter is supplied then the
      * formula will return a value in metres.
      * @param D\Calculator\CalculatorInterface $calculator
-     * @param D\Calculator\ConverterAbstract $unit_converter
+     * @param D\Calculator\ConverterInterface $unit_converter
      * @return float
      */
-    public function get(D\Calculator\CalculatorAbstract $calculator = null, D\Converter\ConverterAbstract $unit_converter = null) {
+    public function get(D\Calculator\CalculatorInterface $calculator = null, D\Converter\ConverterInterface $unit_converter = null) {
         if (is_null($calculator)) {
             $calculator = new D\Calculator\Vincenty;
         }

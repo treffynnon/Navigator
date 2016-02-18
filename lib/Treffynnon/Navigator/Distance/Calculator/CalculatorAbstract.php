@@ -17,7 +17,7 @@ use Treffynnon\Navigator\CelestialBody as CB;
  * A base set of methods to implement the setting of a celestial body
  * for a calculator
  */
-abstract class CalculatorAbstract {
+abstract class CalculatorAbstract implements CalculatorInterface {
 
     public $celestialBody = null;
 

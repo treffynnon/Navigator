@@ -14,39 +14,36 @@ namespace Treffynnon\Navigator\Distance\Converter;
  * A couple of alias functions for a shorter syntax when using the
  * converter objects that extend this abstract
  */
-abstract class ConverterAbstract {
+abstract class ConverterAbstract implements ConverterInterface {
 
     /**
-     * Convert the supplied value using factor
-     * @param float Value to be converted
-     * @return mixed Converted value 
+     * @var mixed A conversion factor to use
+     */
+    public $factor = 1;
+
+    /**
+     * @inheritdoc
      */
     public function convert($distance) {
         return $distance * $this->factor;
     }
 
     /**
-     * Convert the supplied value by reversing the factor
-     * @param float Value to be reverse converted
-     * @return mixed Reversed value 
+     * @inheritdoc
      */
     public function reverse($distance) {
         return $distance / $this->factor;
     }
 
     /**
-     * Convert the distance
-     * @param float $distance
-     * @return float 
+     * @inheritdoc
      */
     public function c($distance) {
         return $this->convert($distance);
     }
 
     /**
-     * Reverse the distance conversion
-     * @param float $distance
-     * @return float 
+     * @inheritdoc
      */
     public function r($distance) {
         return $this->reverse($distance);

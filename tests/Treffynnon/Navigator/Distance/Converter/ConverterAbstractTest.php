@@ -16,7 +16,7 @@ class ConverterAbstractTest extends PHPUnit_Framework_TestCase {
         $stub->expects($this->any())
             ->method('convert')
             ->will($this->returnValue(true));
-        $this->assertTrue($stub->c(10));
+        $this->assertSame($stub->c(10), 10);
     }
 
     /**
@@ -35,7 +35,7 @@ class ConverterAbstractTest extends PHPUnit_Framework_TestCase {
         $stub->expects($this->any())
             ->method('reverse')
             ->will($this->returnValue(true));
-        $this->assertTrue($stub->r(10));
+        $this->assertSame($stub->r(10), 10);
     }
 
     /**

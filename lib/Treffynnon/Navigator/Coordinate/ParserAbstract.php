@@ -17,7 +17,7 @@ use Treffynnon\Navigator\Exception as E;
  * A base set of methods to set a direction (N,S,E,W) and validate
  * coordinates for classes that extend this abstract
  */
-abstract class ParserAbstract {
+abstract class ParserAbstract implements ParserInterface {
 
     /**
      * The direction stored as either Treffynnon\Navigator::Long or Treffynnon\Navigator::Lat
@@ -26,8 +26,7 @@ abstract class ParserAbstract {
     protected $direction = null;
 
     /**
-     * Initialise parser. Pass in either Treffynnon\Navigator::Long or Treffynnon\Navigator::Lat
-     * @param string $direction
+     * @inheritdoc
      */
     public function __construct($direction = null) {
         if (!is_null($direction)) {
@@ -36,16 +35,14 @@ abstract class ParserAbstract {
     }
 
     /**
-     * Get the direction string
-     * @return string
+     * @inheritdoc
      */
     public function getDirection() {
         return $this->direction;
     }
 
     /**
-     * Set the direction using Treffynnon\Navigator::Long or Treffynnon\Navigator::Lat
-     * @param string $direction
+     * @inheritdoc
      */
     public function setDirection($direction) {
         if ($direction === N::LAT
@@ -57,11 +54,7 @@ abstract class ParserAbstract {
     }
 
     /**
-     * Wrapper function around the parse method to allow for coordinate 
-     * validation
-     * @param float|string $coord
-     * @return float
-     * @throws \Exception 
+     * @inheritdoc
      */
     public function set($coord) {
         $radians = $this->parse($coord);
