@@ -1,5 +1,5 @@
 {
-    "name": "Treffynnon/Navigator",
+    "name": "treffynnon/navigator",
     "type": "library",
     "description": "Geographic calculations for PHP",
     "keywords": ["distance","geography","navigaton"],
